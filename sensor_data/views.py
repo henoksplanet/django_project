@@ -1,31 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
-
-people=[
-    {
-        'First':'Henok',
-        'Last': 'Tadesse',
-        'Handle':'@henoktad'
-    },
-    {
-        'First':'Teme',
-        'Last': 'Meta',
-        'Handle':'@tememeta'
-    },
-    {
-        'First':'Kaleb',
-        'Last': 'chala',
-        'Handle':'@KalebCha'
-    }
-]
-
-
+from sensor_data.models import Sensor_Type,sensor_full_data
 
 
 def say_hello(request):
    
     ctx={
-     'people':people
+     'sensor_data_obj':sensor_full_data.objects.all()
     }
     return render(request,'sensor_data_temp.html',ctx)

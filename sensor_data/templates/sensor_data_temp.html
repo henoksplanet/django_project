@@ -11,23 +11,53 @@
     <title>Sensor Data!</title>
   </head>
   <body>
-    <table class="table table-hover table-dark">
-        <thead>
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">daq</th>
+            <th scope="col">Module_nr</th>
+            <th scope="col">Slot</th>
+            <th scope="col">Ch_nr</th>
+            <th scope="col">Sensor Name</th>
+            <th scope="col">Serial</th>
+            <th scope="col">Property</th>
+            <th scope="col">Color Code</th>
+            <th scope="col">MP/TP/TW</th>
+            <th scope="col">Sensor_Type_Short</th>
+            <th scope="col">Sensor_Type_Long</th>
+            <th scope="col">TDMS group</th>
+            <th scope="col">Level name</th>
+            <th scope="col">Level_LAT_Exact</th>
+            <th scope="col">Level_LAT_Round</th>
+            <th scope="col">Heading</th>
+            <th scope="col">Orientation</th>
+            <th scope="col">Sensor_p_nr</th>
+            <th scope="col">Status(0/1)</th>
           </tr>
         </thead>
         <tbody>
 
-        {% for person in people %}
+        {% for sensor in sensor_data_obj %}
           <tr>
-            <th scope="row">1</th>
-            <td>{{person.First}}</td>
-            <td>{{person.Last}}</td>
-            <td>{{person.Handle}}</td>
+            <td scope="col">{{sensor.daq}}</td>
+            <td scope="col">{{sensor.module_nr}}</td>
+            <td scope="col">{{sensor.slot}}</td>
+            <td scope="col">{{sensor.ch_nr}}</td>
+            <td scope="col">{{sensor.sensor_name}}</td>
+            <td scope="col">{{sensor.serial}}</td>
+            <td scope="col">{{sensor.property}}</td>
+            <td scope="col">{{sensor.color_code}}</td>
+            <td scope="col">{{sensor.MP_TP_TW}}</td>
+            <td scope="col">{{sensor.sensor_type.short}}</td>
+            <td scope="col">{{sensor.sensor_type.long}}</td>
+            <td scope="col">{{sensor.tdms_group}}</td>
+            <td scope="col">{{sensor.level_name}</td>
+            <td scope="col">{{sensor.level_lat_Exact}}</td>
+            <td scope="col">{{sensor.level_lat_round_or_name}}</td>
+            <td scope="col">{{sensor.heading}}</td>
+            <td scope="col">{{sensor.orientation}}</td>
+            <td scope="col">{{sensor.sensor_part_nr}}</td>
+            <td scope="col">{{sensor.status}}</td>
           </tr>
         {% endfor %}
         </tbody>
